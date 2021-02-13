@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<center>
+	<h1 style="color: white; font-size: 60px;">
+		Comparación de Datos
+	</h1>
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<script>
+		var vec=[];
+	</script>
+</head>
+<body>
+
+	<div class="cuadro1">
+		<h1 style="font-size: 40px;">Agregar Valores</h1>
+	<label>Ingrese un nombre</label>
+	<br><br><br>
+	
+	<input type="text" id="n1">
+	<br><br><br>
+	<div class="boton1">
+	<input type="button"  onclick="ingre();" value="Ingresar">
+	<br><br><br>
+	</center>
+	</div>
+</div>
+	<script>
+ 
+		function ingre () {
+
+			
+
+       	   	 var n1=document.getElementById("n1");
+       	   
+
+       	   	 nom=n1.value;
+       	   	 vec.push(nom);
+       	   	 alert('Valor agregado corectamente');
+       	   	}
+       	   	</script>
+
+
+<center>
+	<div class="cuadro2">
+		<h1 style="font-size: 40px;">Eliminar Valores</h1>
+	<label>Ingrese un nombre</label>
+	<br><br><br>
+	<input type="text" id="n2">
+	<br><br><br>
+	<div class="boton2">
+	<input type="button"  onclick="eliminar();" value="Eliminar">
+	</div>
+	<br><br><br>
+	<div class="boton3">
+	<input type="button" id="com" onclick="comparar()" value="Verificar">	
+</center>
+</div>
+</div>
+<script>
+			
+       	  function comparar() {
+				var n2=document.getElementById("n2");
+				nom1=n2.value;
+       	  		var i=vec.length;
+       	  		
+
+       	  					for (var x = 0; x <= i-1; x++) 
+
+       	  						{
+       	  							if (vec[x]==nom1) 
+       	  							{
+       	  								var w=1;
+       	  								x=i+1;
+       	  							}
+       	  							else
+       	  								{ 
+       	  									var w=2;
+       	  								}
+
+
+       	  						}
+
+       	  								if (w==1)
+       	  								 {
+       	  									alert(' Hay un dato que ya digito anteriormente');
+       	  								}
+
+       	  								else
+       	  								{
+       	  									alert(' NO hay datos que se repitan');
+       	  								}
+       	   	
+
+							  }
+
+							   function eliminar() {
+								var n2=document.getElementById("n2");
+								nom1=n2.value;
+       	  						var i=vec.length;
+       	  			
+
+       	  					for (var x = 0; x <= i-1; x++) 
+
+       	  						{
+       	  							if (vec[x]==nom1) 
+       	  							{
+       	  								var w=1;
+       	  								vec.splice(x,1);
+       	  								x=i+1;
+       	  							}
+       	  							else
+       	  								{ 
+       	  									var w=2;
+       	  								}
+
+
+       	  						}
+
+       	  								if (w==1)
+       	  								 {
+       	  									alert(' El dato ha sido eliminado');
+       	  								}
+
+       	  								else
+       	  								{
+       	  									alert(' NO Se elimino ningun dato');
+       	  								}
+       	   	
+
+  } 
+
+
+
+	</script>
+
+</body>
+</html>
